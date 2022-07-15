@@ -60,7 +60,7 @@ export class Register extends React.Component {
 
     console.log(newUser);
 
-    axios.post("http://localhost:4000/register", newUser).then(res => {
+    axios.post("https://hostel-service.herokuapp.com/register", newUser).then(res => {
       if (res.status >= 200 && res.status < 300) {
         alert("User registered please Login to continue !");
         this.props.history.push("login");

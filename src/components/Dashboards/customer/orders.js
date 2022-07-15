@@ -49,7 +49,7 @@ class Orders extends Component {
     };
     var x = 0;
 
-    Axios.post("http://localhost:4000/product/fetch", order)
+    Axios.post("https://hostel-service.herokuapp.com/product/fetch", order)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           console.log(res.data[0].left_quantity);
@@ -66,7 +66,7 @@ class Orders extends Component {
 
   fetchOrder = e => {
     Axios.get(
-      "http://localhost:4000/order/fetch/" +
+      "https://hostel-service.herokuapp.com/order/fetch/" +
         JSON.parse(localStorage["token"]).user_name
     )
       .then(resp => {

@@ -15,7 +15,7 @@ class dispatchlisting extends Component {
 
   componentDidMount() {
     Axios.get(
-      "http://localhost:4000/product/fetch/" +
+      "https://hostel-service.herokuapp.com/product/fetch/" +
         JSON.parse(localStorage["token"]).user_name +
         "/past"
     )

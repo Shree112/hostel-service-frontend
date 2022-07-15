@@ -47,7 +47,7 @@ class addproduct extends Component {
     };
 
     axios
-      .put("http://localhost:4000/product/update", Product)
+      .put("https://hostel-service.herokuapp.com/product/update", Product)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           alert("Order successfully updated");
@@ -64,7 +64,7 @@ class addproduct extends Component {
     var obj = {
       id: this.props.match.params.poid
     };
-    axios.post("http://localhost:4000/product/fetchquantity", obj).then(res => {
+    axios.post("https://hostel-service.herokuapp.com/product/fetchquantity", obj).then(res => {
       if (res.status >= 200 && res.status < 300) {
         this.setState({
           left_quant: parseInt(Object(res.data[0])["left_quantity"])

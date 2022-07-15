@@ -19,7 +19,7 @@ class review extends Component {
   }
 
   fetchRatings(seller_name, prod_id) {
-    Axios.get("http://localhost:4000/ratings/" + seller_name + "/" + prod_id)
+    Axios.get("https://hostel-service.herokuapp.com/ratings/" + seller_name + "/" + prod_id)
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
           alert("No ratings found !");
@@ -50,7 +50,7 @@ class review extends Component {
 
   fetchReviews(seller_name, prod_id) {
     console.log(this.state.seller_name);
-    Axios.get("http://localhost:4000/reviews/" + seller_name + "/" + prod_id)
+    Axios.get("https://hostel-service.herokuapp.com/reviews/" + seller_name + "/" + prod_id)
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
           alert("No reviews found !");

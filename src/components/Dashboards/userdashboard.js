@@ -48,7 +48,7 @@ class UserDashboard extends Component {
     this.setState({ submit: false });
     this.setState({ search: "" });
 
-    Axios.get("http://localhost:4000/product/fetchall")
+    Axios.get("https://hostel-service.herokuapp.com/fetchall")
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
           this.setState({ search: "" });
@@ -78,7 +78,7 @@ class UserDashboard extends Component {
     }
 
     Axios.get(
-      "http://localhost:4000/product/fetch/" + this.state.search.toLowerCase()
+      "https://hostel-service.herokuapp.com/product/fetch/" + this.state.search.toLowerCase()
     )
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
@@ -125,7 +125,7 @@ class UserDashboard extends Component {
       buyer_name: JSON.parse(localStorage["token"]).user_name
     };
 
-    Axios.post("http://localhost:4000/order/place", order)
+    Axios.post("https://hostel-service.herokuapp.com/order/place", order)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           alert("Product Successfully Ordered");
@@ -139,7 +139,7 @@ class UserDashboard extends Component {
   };
 
   fetchRatings(seller_name) {
-    Axios.get("http://localhost:4000/ratings/" + seller_name)
+    Axios.get("https://hostel-service.herokuapp.com/ratings/" + seller_name)
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
           return 0;

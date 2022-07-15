@@ -53,7 +53,7 @@ export class Login extends Component {
 
     //console.log(newUser);
 
-    axios.post("http://localhost:4000/login", newUser).then(res => {
+    axios.post("https://hostel-service.herokuapp.com/login", newUser).then(res => {
       if (res.status >= 200 && res.status < 300) {
         var token = res.data;
         token.login = true;

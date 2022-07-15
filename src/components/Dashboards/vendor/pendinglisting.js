@@ -21,7 +21,7 @@ class pendinglisting extends Component {
       id: e.target.value
     };
 
-    Axios.put("http://localhost:4000/product/delete", prod)
+    Axios.put("https://hostel-service.herokuapp.com/product/delete", prod)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           alert("Deleted");
@@ -34,7 +34,7 @@ class pendinglisting extends Component {
   };
   componentDidMount() {
     Axios.get(
-      "http://localhost:4000/product/fetch/" +
+      "https://hostel-service.herokuapp.com/product/fetch/" +
         JSON.parse(localStorage["token"]).user_name +
         "/pending"
     )

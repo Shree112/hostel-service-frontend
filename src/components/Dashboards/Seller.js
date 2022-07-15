@@ -18,7 +18,7 @@ class review extends Component {
   }
 
   fetchRatings(seller_name) {
-    Axios.get("http://localhost:4000/ratings/" + seller_name)
+    Axios.get("https://hostel-service.herokuapp.com/ratings/" + seller_name)
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
           alert("No ratings found !");
@@ -49,7 +49,7 @@ class review extends Component {
 
   fetchReviews(seller_name) {
     console.log(this.state.seller_name);
-    Axios.get("http://localhost:4000/reviews/" + seller_name)
+    Axios.get("https://hostel-service.herokuapp.com/reviews/" + seller_name)
       .then(resp => {
         if (Object.keys(resp.data).length === 0) {
           alert("No reviews found !");

@@ -39,7 +39,7 @@ class addproduct extends Component {
     };
 
     axios
-      .post("http://localhost:4000/product/add", Product)
+      .post("https://hostel-service.herokuapp.com/product/add", Product)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           alert("Product Successfully Listed");

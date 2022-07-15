@@ -21,7 +21,7 @@ class readylisting extends Component {
       id: e.target.value
     };
 
-    Axios.put("http://localhost:4000/product/dispatch", prod)
+    Axios.put("https://hostel-service.herokuapp.com/product/dispatch", prod)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           alert("Dispatched");
@@ -34,7 +34,7 @@ class readylisting extends Component {
   };
   componentDidMount() {
     Axios.get(
-      "http://localhost:4000/product/fetch/" +
+      "https://hostel-service.herokuapp.com/product/fetch/" +
         JSON.parse(localStorage["token"]).user_name +
         "/ready"
     )

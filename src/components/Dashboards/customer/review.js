@@ -50,7 +50,7 @@ class dashboard extends Component {
     };
 
     axios
-      .put("http://localhost:4000/order/review", review)
+      .put("https://hostel-service.herokuapp.com/order/review", review)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           alert("Order Reviewed Successfully");
